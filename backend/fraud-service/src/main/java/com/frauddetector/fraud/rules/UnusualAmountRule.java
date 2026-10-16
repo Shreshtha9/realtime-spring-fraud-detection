@@ -16,6 +16,20 @@ public class UnusualAmountRule implements FraudRule {
     public UnusualAmountRule(JdbcTemplate jdbc) {
         this.jdbc = jdbc;
     }
+      @Override
+    public String name() {
+        return NAME;
+    }
+
+    @Override
+    public String description() {
+        return "Payment is more than 10 times the user's average amount.";
+    }
+
+    @Override
+    public int score() {
+        return 40;
+    }
 
     @Override
     public RuleResult evaluate(TransactionEvent event) {

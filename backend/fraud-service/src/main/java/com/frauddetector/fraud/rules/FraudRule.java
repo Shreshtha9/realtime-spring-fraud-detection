@@ -5,4 +5,10 @@ import com.frauddetector.fraud.model.TransactionEvent;
 
 public interface FraudRule {
     RuleResult evaluate(TransactionEvent event);
+
+    String name();
+
+    String description();
+
+    int score();
 }

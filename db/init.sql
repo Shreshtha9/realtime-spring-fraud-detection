@@ -25,6 +25,9 @@ CREATE TABLE transactions (
     device_id       VARCHAR(50),
     event_time      TIMESTAMP
 );
+CREATE INDEX IF NOT EXISTS idx_transactions_user_time ON transactions (
+    user_id, event_time
+);
 
 CREATE TABLE alerts (
     id              SERIAL PRIMARY KEY,

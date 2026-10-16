@@ -15,6 +15,15 @@ spring:
       value-serializer: org.springframework.kafka.support.serializer.JacksonJsonSerializer
       properties:
         spring.json.add.type.headers: false
+    consumer:
+      group-id: dashboard-feed
+      auto-offset-reset: latest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JacksonJsonDeserializer
+      properties:
+        spring.json.use.type.headers: false
+        spring.json.value.default.type: com.frauddetector.transaction.model.AlertView
+        spring.json.trusted.packages: "*"
 
 simulator:
   events-per-second: 2
