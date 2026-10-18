@@ -71,7 +71,7 @@ public class ImpossibleTravelRule implements FraudRule {
 
         // could a plane at 900 km/h cover this distance in the time that passed?
         if (distanceKm > MAX_SPEED_KMH * hours) {
-            return RuleResult.flagged(NAME, 50, String.format(
+            return RuleResult.flagged(NAME, score(), String.format(
                     "%s to %s is %.0f km, but only %.0f minutes passed",
                     previousCity, event.city(), distanceKm, hours * 60));
         }

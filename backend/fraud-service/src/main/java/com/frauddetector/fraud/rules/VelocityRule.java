@@ -47,7 +47,7 @@ public class VelocityRule implements FraudRule {
                 Integer.class, event.userId(), Timestamp.from(from), Timestamp.from(to));
 
         if (count != null && count > MAX_PAYMENTS) {
-            return RuleResult.flagged(NAME, 40,
+            return RuleResult.flagged(NAME,  score(),
                     count + " payments in " + WINDOW_SECONDS + " seconds (limit " + MAX_PAYMENTS + ")");
         }
         return RuleResult.clean(NAME);

@@ -43,7 +43,7 @@ public class UnusualAmountRule implements FraudRule {
 
         double avg = result.get(0);
         if (event.amount() > avg * 10) {
-            return RuleResult.flagged(NAME, 40,
+            return RuleResult.flagged(NAME, score(),
                     "Amount " + event.amount() + " is more than 10x user's average " + avg);
         }
         return RuleResult.clean(NAME);

@@ -47,7 +47,7 @@ public class DailyLimitRule implements FraudRule {
                 Double.class, event.userId(), Timestamp.from(from), Timestamp.from(to));
 
         if (total != null && total > LIMIT) {
-            return RuleResult.flagged(NAME, 35,
+            return RuleResult.flagged(NAME, score(),
                     String.format("Rs %.0f spent in the last 24 hours (limit Rs %.0f)", total, LIMIT));
         }
         return RuleResult.clean(NAME);

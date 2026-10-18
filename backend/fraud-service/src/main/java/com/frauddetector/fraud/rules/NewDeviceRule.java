@@ -38,7 +38,7 @@ public class NewDeviceRule implements FraudRule {
                 Integer.class, event.userId(), event.deviceId());
 
         if (known != null && known == 0) {
-            return RuleResult.flagged(NAME, 30,
+            return RuleResult.flagged(NAME, score(),
                     "Device " + event.deviceId() + " has never been used by this user");
         }
         return RuleResult.clean(NAME);
