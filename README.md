@@ -11,7 +11,7 @@
 
 > ⚠️ **All payments are simulated** by a built-in traffic generator. No real customer or card data is used, and the rules are deliberately simple so every decision can be explained. See [Limitations](#-limitations-and-roadmap).
 
-![Dashboard](docs/dashboard.png)
+
 
 ## 📑 Contents
 
